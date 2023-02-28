@@ -1,14 +1,16 @@
 package br.com.alura;
 
-import java.lang.instrument.UnmodifiableClassException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Curso {
 	private String titulo;
 	private String nomeProf;
 	private List<Aulas> aulas = new ArrayList<>();
+	private Set<Alunos> alunos = new HashSet();
 	
 	public Curso() {
 		
@@ -43,6 +45,14 @@ public class Curso {
 	public String toString() {
 		return "Curso [titulo=" + titulo + ", nomeProf=" + nomeProf + ", aulas=" + aulas + "]";
 	}
-	
+
+	public void matricula(Alunos aluno) {
+		this.alunos.add(aluno);
+		
+	}
+
+	public Set<Alunos> getAlunos() {
+		return Collections.unmodifiableSet(alunos);
+	}
 	
 }
