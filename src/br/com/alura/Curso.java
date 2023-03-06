@@ -60,6 +60,16 @@ public class Curso {
 		
 	}
 
+	public Alunos buscaMatricula(int i) {
+		for (Alunos a : alunos) {
+			if(a.getMatricula() == i) {
+				return a;
+			}
+		}
+		return null;
+		
+	}
+
 	
 	
 }
