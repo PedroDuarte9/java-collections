@@ -2,8 +2,10 @@ package br.com.alura;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class Curso {
@@ -11,6 +13,7 @@ public class Curso {
 	private String nomeProf;
 	private List<Aulas> aulas = new ArrayList<>();
 	private Set<Alunos> alunos = new LinkedHashSet<>();
+	private Map<Integer, Alunos> buscarMatricula = new HashMap<>();
 	
 	public Curso() {
 		
@@ -48,7 +51,7 @@ public class Curso {
 
 	public void matricula(Alunos aluno) {
 		this.alunos.add(aluno);
-		
+		this.buscarMatricula.put(aluno.getMatricula(), aluno);
 	}
 
 	public Set<Alunos> getAlunos() {
@@ -60,13 +63,8 @@ public class Curso {
 		
 	}
 
-	public Alunos buscaMatricula(int i) {
-		for (Alunos a : alunos) {
-			if(a.getMatricula() == i) {
-				return a;
-			}
-		}
-		return null;
+	public Alunos buscaMatricula(int matricula) {
+		return buscarMatricula.get(matricula);
 		
 	}
 
