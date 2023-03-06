@@ -2,7 +2,7 @@ package br.com.alura;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -10,7 +10,7 @@ public class Curso {
 	private String titulo;
 	private String nomeProf;
 	private List<Aulas> aulas = new ArrayList<>();
-	private Set<Alunos> alunos = new HashSet();
+	private Set<Alunos> alunos = new LinkedHashSet<>();
 	
 	public Curso() {
 		
